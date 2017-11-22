@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{A8E23AE5-E9EA-48EF-89C4-7198C10EC895}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Nathan.MapFile.UnitTestsX\Nathan.MapFile.UnitTestsX.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Nathan.MapFile.Console\NathanMapFile.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="DummyProject\DummyProject.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Nathan_MapFile_UnitTestsX">
+        <MSBuild Projects="Nathan.MapFile.UnitTestsX\Nathan.MapFile.UnitTestsX.dproj"/>
+    </Target>
+    <Target Name="Nathan_MapFile_UnitTestsX:Clean">
+        <MSBuild Projects="Nathan.MapFile.UnitTestsX\Nathan.MapFile.UnitTestsX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Nathan_MapFile_UnitTestsX:Make">
+        <MSBuild Projects="Nathan.MapFile.UnitTestsX\Nathan.MapFile.UnitTestsX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NathanMapFile">
+        <MSBuild Projects="Nathan.MapFile.Console\NathanMapFile.dproj"/>
+    </Target>
+    <Target Name="NathanMapFile:Clean">
+        <MSBuild Projects="Nathan.MapFile.Console\NathanMapFile.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NathanMapFile:Make">
+        <MSBuild Projects="Nathan.MapFile.Console\NathanMapFile.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DummyProject">
+        <MSBuild Projects="DummyProject\DummyProject.dproj"/>
+    </Target>
+    <Target Name="DummyProject:Clean">
+        <MSBuild Projects="DummyProject\DummyProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DummyProject:Make">
+        <MSBuild Projects="DummyProject\DummyProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Nathan_MapFile_UnitTestsX;NathanMapFile;DummyProject"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Nathan_MapFile_UnitTestsX:Clean;NathanMapFile:Clean;DummyProject:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Nathan_MapFile_UnitTestsX:Make;NathanMapFile:Make;DummyProject:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
