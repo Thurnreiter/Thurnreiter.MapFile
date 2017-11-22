@@ -33,3 +33,7 @@ Sourcename from address:         Unit1.pas
 
 Press [ENTER] to continue.
 ```
+
+
+What you need is thirdparty components from ..\3rdParty\JEDICodeLibraryJCL-2.9\source
+You find it on https://github.com/project-jedi/jcl/tree/master/jcl/source
