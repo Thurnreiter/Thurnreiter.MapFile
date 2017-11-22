@@ -1,5 +1,3 @@
-# Thurnreiter.MapFile
-
 Delphi MAP File analyzer
 ========================
 This is a simple MAP file analyzer for Delphi. Very often I had only the address of access violations, but could not find out where. 
